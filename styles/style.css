@@ -263,6 +263,10 @@ h1 .changeColor {
   margin: 0 auto;
 }
 
+body {
+  background-color: #b4b4da;
+}
+
 img {
   max-width: 100%;
   min-width: 100%;
@@ -315,8 +319,8 @@ header {
           justify-content: center;
 }
 .headerInfo .headerImage {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -367,4 +371,13 @@ form input::placeholder {
   font-weight: 300;
   font-size: 1rem;
   color: #898989;
+}
+
+footer {
+  background-color: #b4b4da;
+  text-align: center;
+  border-top: 1px #8081be solid;
+  padding: 10px 0;
+  color: #8081be;
+  font-weight: 300;
 }
