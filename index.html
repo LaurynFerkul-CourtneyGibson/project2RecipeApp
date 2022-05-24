@@ -5,33 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe App</title>
-
     <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body class="wrapper">
+    <!-- START OF HEADER CONTENT -->
     <header>
+        <!-- START OF HEADER CONTENT -->
         <div class="headerInfo">
             <div class="headerText">
                 <h1>I don't know what to eat</h1>
             </div>
             <div class="headerImage"><img src="./assets/tray.png" alt="silver tray"></div>
         </div>
+        <!-- END OF HEADER CONTENT -->
+
+        <!-- START OF FORM TO ENTER AN INGREDIENT -->
         <form>
             <label for = "ingredientItem" class="sr-only">an ingredient you're craving</label>
             <input type="text" id="ingredientItem" placeholder="an ingredient you're craving"></input>
             <button>find a recipe</button>
         </form>
+        <!-- END OF FORM TO ENTER AN INGREDIENT -->
     </header>
+    <!-- END OF HEADER CONTENT -->
+
+    <!-- START OF MAIN CONTENT -->
     <main>
+        <!-- START OF RESULT CONTENT -->
         <section>
             <ul id="recipeResults">
             </ul>
         </section>
+        <!-- END OF RESULT CONTENT -->
     </main>
+    <!-- END OF MAIN CONTENT -->
+
+    <!-- START OF FOOTER CONTENT -->
     <footer>
         <p>Created at Juno</p>
     </footer>
+    <!-- END OF FOOTER CONTENT -->
     
-<script src="./script/script.js"></script>
+    <!-- IMPORTED JAVASCRIPT -->
+    <script src="./script/script.js"></script>
 </body>
 </html>
