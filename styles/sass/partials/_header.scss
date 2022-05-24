@@ -1,0 +1,16 @@
+header {
+    background-color: $darkPurple;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerInfo{
+    display: flex;
+    justify-content: center;
+    .headerImage{
+        flex-basis: 50%;
+        align-self: flex-end;
+    }
+}

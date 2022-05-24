@@ -8,42 +8,49 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
-<body class="wrapper">
+<body>
     <!-- START OF HEADER CONTENT -->
     <header>
-        <!-- START OF HEADER CONTENT -->
-        <div class="headerInfo">
-            <div class="headerText">
-                <h1>I don't know what to eat</h1>
+        <div class="wrapper">
+            <!-- START OF HEADER CONTENT -->
+            <div class="headerInfo">
+                <div class="headerText">
+                    <h1><span class="oneLine">I don't</span> <span class="oneLine">know</span> <span class="oneLine">what</span>
+                        <span class="oneLine">to <span class="changeColor">eat</span></span></h1>
+                </div>
+                <div class="headerImage"><img src="./assets/tray.png" alt="silver tray"></div>
             </div>
-            <div class="headerImage"><img src="./assets/tray.png" alt="silver tray"></div>
+            <!-- END OF HEADER CONTENT -->
+            
+            <!-- START OF FORM TO ENTER AN INGREDIENT -->
+            <form>
+                <label for="ingredientItem" class="sr-only">an ingredient you're craving</label>
+                <input type="text" id="ingredientItem" placeholder="an ingredient you're craving"></input>
+                <button>find a recipe</button>
+            </form>
+            <!-- END OF FORM TO ENTER AN INGREDIENT -->
+            </header>
         </div>
-        <!-- END OF HEADER CONTENT -->
-
-        <!-- START OF FORM TO ENTER AN INGREDIENT -->
-        <form>
-            <label for = "ingredientItem" class="sr-only">an ingredient you're craving</label>
-            <input type="text" id="ingredientItem" placeholder="an ingredient you're craving"></input>
-            <button>find a recipe</button>
-        </form>
-        <!-- END OF FORM TO ENTER AN INGREDIENT -->
-    </header>
     <!-- END OF HEADER CONTENT -->
 
     <!-- START OF MAIN CONTENT -->
     <main>
-        <!-- START OF RESULT CONTENT -->
-        <section>
-            <ul id="recipeResults">
-            </ul>
-        </section>
-        <!-- END OF RESULT CONTENT -->
+        <div class="wrapper">
+            <!-- START OF RESULT CONTENT -->
+            <section>
+                <ul id="recipeResults">
+                </ul>
+            </section>
+            <!-- END OF RESULT CONTENT -->
+        </div>
     </main>
     <!-- END OF MAIN CONTENT -->
 
     <!-- START OF FOOTER CONTENT -->
     <footer>
-        <p>Created at Juno</p>
+        <div class="wrapper">
+            <p>Created at Juno College</p>
+        </div>
     </footer>
     <!-- END OF FOOTER CONTENT -->
     
