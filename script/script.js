@@ -12,8 +12,7 @@
 const recipeApp = {};
 recipeApp.apiKey = '7e4cda4da2f846f992adab99aca1e7d0';
 recipeApp.formElement = document.querySelector('form');
-// const ul = document.getElementById('recipeResults');
-// const list = document.createElement();
+recipeApp.recipeResultsUl = document.querySelector(`#recipeResults`)
 
 // init function ready to kick initalize the functions 
 recipeApp.init = function () {
@@ -38,15 +37,11 @@ recipeApp.getRecipeInfo = function (ingredient) {
         .then(function (response) {
             if (response.ok) {
                 return response.json();
-            } 
-            // else {
-            //     throw new Error(respnse);
-            // }
-            console.log(response);
+            }
         })
-        .then(function (jsonData) {
-            console.log(jsonData.results)
-            return jsonData.results;
+        .then(function (results) {
+            recipeApp.recipeResultsUl.innerHTML = '';
+            recipeApp.displayRecipes(results);
         })
 }
 
@@ -57,14 +52,39 @@ recipeApp.setUpEventListener = function () {
         e.preventDefault();
         // Grab the value of the select element
         const inputElement = document.getElementById('ingredientItem').value;
-        console.log(inputElement);
+
         recipeApp.getRecipeInfo(inputElement);
 
     })
 }
 
+
+recipeApp.displayRecipes = function (recipeData) {
+
+    let recipeArray = recipeData.results;
+
+    recipeArray.forEach(function (recipeObject){
+            console.log(recipeObject);
+        const image = document.createElement('img');
+        image.src = recipeObject.image;
+        image.alt = recipeObject.title;
+
+        const title = document.createElement(`h2`);
+        title.innerText = recipeObject.title;
+
+        const cookTime = document.createElement(`p`);
+        cookTime.innerText = `Cook time: ${recipeObject.readyInMinutes} mins`;
+        
+        const recipeListItem = document.createElement('li');
+
+        recipeListItem.appendChild(image);
+        recipeListItem.appendChild(title);
+        recipeListItem.appendChild(cookTime);
+
+        recipeApp.recipeResultsUl.appendChild(recipeListItem);
+
+    })
+}
+
+
 recipeApp.init();
-
-
-
-
