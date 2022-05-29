@@ -18,7 +18,7 @@ img {
 button {
     background-color: $yellow;
     border: 2px solid $yellow;
-    padding: 19px 10px;
+    padding: 19px;
     border-radius: 20px;
     cursor: pointer;
     text-transform: uppercase;
@@ -28,11 +28,14 @@ button {
     letter-spacing: 1px;
     color: $darkGrey;
     display: block;
-    min-width: 40%;
+    width: 40%;
     transition: 1s ease;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         background-color: transparent;
         color: $yellow;
     }
 }
+
 /******* BASE STYLES END *******/

@@ -1,0 +1,69 @@
+/****************** MEDIA QUERY FOR LARGE SCREENS START ******************/
+@media (min-width: 2800px) {
+    h1 {
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+}
+
+/****************** MEDIA QUERY FOR LARGE SCREENS END ******************/
+
+/****************** MEDIA QUERY FOR TABLET START ******************/
+@media (max-width: 900px) {
+    .headerInfo {
+        .headerImage {
+            flex-basis: 40%;
+        }
+    }
+
+}
+
+/****************** MEDIA QUERY FOR TABLET END ******************/
+
+/****************** MEDIA QUERY FOR MOBILE START ******************/
+@media (max-width: 660px) {
+    h1 {
+        font-size: 15vw;
+        line-height: 15vw;
+        text-align: center;
+    }
+
+    /******* HEADER STYLES START - MOBILE SCREENS *******/
+    header {
+        padding-bottom: 50px;
+    }
+
+    .headerInfo {
+        flex-direction: column-reverse;
+
+        .headerImage {
+            margin: 31px 0;
+            max-width: 50%;
+            align-self: center;
+        }
+    }
+
+    /******* HEADER STYLES END - MOBILE SCREENS *******/
+
+    /******* FORM STYLES START - MOBILE SCREENS *******/
+    form {
+        input {
+            padding: 8px 16px;
+            margin: 28px 0 22px 0;
+
+            &::placeholder {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /******* FORM STYLES END - MOBILE SCREENS *******/
+}
+
+/****************** MEDIA QUERY FOR MOBILE END ******************/

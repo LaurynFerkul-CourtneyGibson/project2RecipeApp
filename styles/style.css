@@ -236,7 +236,9 @@ body {
   font-size: 1rem;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   padding: 0;
   margin: 0;
 }
@@ -244,9 +246,9 @@ h1, h2, p {
 h1 {
   color: white;
   text-transform: uppercase;
-  font-size: 5rem;
+  font-size: 9vw;
   font-weight: 900;
-  line-height: 95px;
+  line-height: 8vw;
   letter-spacing: 1px;
 }
 h1 .oneLine {
@@ -276,7 +278,7 @@ img {
 button {
   background-color: #f7dc39;
   border: 2px solid #f7dc39;
-  padding: 19px 10px;
+  padding: 19px;
   border-radius: 20px;
   cursor: pointer;
   text-transform: uppercase;
@@ -286,7 +288,7 @@ button {
   letter-spacing: 1px;
   color: #383838;
   display: block;
-  min-width: 40%;
+  width: 40%;
   -webkit-transition: 1s ease;
   transition: 1s ease;
 }
@@ -338,7 +340,7 @@ form {
           align-items: center;
 }
 form input {
-  min-width: 100%;
+  width: 100%;
   padding: 18px 30px;
   margin: 50px 0 30px 0;
   border-radius: 30px;
@@ -381,3 +383,77 @@ footer {
   color: #8081be;
   font-weight: 300;
 }
+
+/****************** MEDIA QUERY FOR LARGE SCREENS START ******************/
+@media (min-width: 2800px) {
+  h1 {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
+}
+/****************** MEDIA QUERY FOR LARGE SCREENS END ******************/
+/****************** MEDIA QUERY FOR TABLET START ******************/
+@media (max-width: 900px) {
+  .headerInfo .headerImage {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+/****************** MEDIA QUERY FOR TABLET END ******************/
+/****************** MEDIA QUERY FOR MOBILE START ******************/
+@media (max-width: 660px) {
+  h1 {
+    font-size: 15vw;
+    line-height: 15vw;
+    text-align: center;
+  }
+
+  /******* HEADER STYLES START - MOBILE SCREENS *******/
+  header {
+    padding-bottom: 50px;
+  }
+
+  .headerInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .headerInfo .headerImage {
+    margin: 31px 0;
+    max-width: 50%;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+
+  /******* HEADER STYLES END - MOBILE SCREENS *******/
+  /******* FORM STYLES START - MOBILE SCREENS *******/
+  form input {
+    padding: 8px 16px;
+    margin: 28px 0 22px 0;
+  }
+  form input::-webkit-input-placeholder {
+    font-size: 0.8rem;
+  }
+  form input::-moz-placeholder {
+    font-size: 0.8rem;
+  }
+  form input:-ms-input-placeholder {
+    font-size: 0.8rem;
+  }
+  form input::-ms-input-placeholder {
+    font-size: 0.8rem;
+  }
+  form input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /******* FORM STYLES END - MOBILE SCREENS *******/
+}
+/****************** MEDIA QUERY FOR MOBILE END ******************/
