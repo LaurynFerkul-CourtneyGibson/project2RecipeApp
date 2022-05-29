@@ -17,7 +17,7 @@ recipeApp.formElement = document.querySelector('form');
 
 // init function ready to kick initalize the functions 
 recipeApp.init = function () {
-    recipeApp.getRecipeInfo();
+    recipeApp.setUpEventListener();
 };
 
 recipeApp.getRecipeInfo = function (ingredient) {
@@ -62,11 +62,35 @@ recipeApp.getRecipeInfo = function (ingredient) {
                         return response.json();
                     })
                     .then(function (jsonData) {
-                        console.log(jsonData.title); 
+                        recipeApp.recipeResults.innerHTML = '';
+                    recipeApp.displayRecipes(jsonData); 
 
                     })
             })
         })
 }
 
+
+
+recipeApp.setUpEventListener = function () {
+    // Add event listener to our form element 
+    recipeApp.formElement.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Grab the value of the select element
+        const inputElement = document.getElementById('ingredientItem').value;
+        console.log(inputElement);
+        recipeApp.getRecipeInfo(inputElement);
+
+    })
+}
+
+
 recipeApp.init();
+
+// recipeApp.displayRecipes = function (recipeData){
+//     let recipeArray = recipeData.recipeObjects;
+
+//     recipeArray.forEach(function (recipeObject) {
+        
+//     })
+// }
