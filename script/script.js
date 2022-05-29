@@ -10,68 +10,47 @@
 // NAMESPACING APP
 
 const recipeApp = {};
-
-recipeApp.apiKey = '327eab5543c046318cc5c224fd42d620';
-
+recipeApp.apiKey = '7e4cda4da2f846f992adab99aca1e7d0';
 recipeApp.formElement = document.querySelector('form');
+// const ul = document.getElementById('recipeResults');
+// const list = document.createElement();
 
 // init function ready to kick initalize the functions 
 recipeApp.init = function () {
     recipeApp.setUpEventListener();
 };
 
+// Getting the recipe information from Spoonacular API
 recipeApp.getRecipeInfo = function (ingredient) {
 
     // Building our endpoint for to the recipe id
     const idUrl = new URL(`https://api.spoonacular.com/recipes/complexSearch`);
     idUrl.search = new URLSearchParams({
         apiKey: recipeApp.apiKey,
-        includeIngredients: ingredient
+        includeIngredients: ingredient,
+        instructionsRequired: true,
+        addRecipeInformation: true,
+        fillIngredients: true
     });
-    
 
-    // Making our first API call to get the recipe id
+    // Making our API call to get the recipe id
     fetch(idUrl)
         .then(function (response) {
-            if (response.ok){
+            if (response.ok) {
                 return response.json();
-            } else {
-                throw new Error(response);
-            }
+            } 
+            // else {
+            //     throw new Error(respnse);
+            // }
             console.log(response);
         })
         .then(function (jsonData) {
+            console.log(jsonData.results)
             return jsonData.results;
-        })
-        .then(function (recipeArray) {
-            const idArray = recipeArray.map(function (recipe) {
-                return recipe.id;
-            })
-            return idArray
-        })
-        .then(function (idArray) {
-            idArray.map(function (id) {
-
-                const recipeInfoUrl = new URL(`https://api.spoonacular.com/recipes/${id}/information`);
-                recipeInfoUrl.search = new URLSearchParams({
-                    apiKey: recipeApp.apiKey
-                });
-
-                fetch(recipeInfoUrl)
-                    .then(function (response) {
-                        return response.json();
-                    })
-                    .then(function (jsonData) {
-                        recipeApp.recipeResults.innerHTML = '';
-                    recipeApp.displayRecipes(jsonData); 
-
-                    })
-            })
         })
 }
 
-
-
+// Connecting our event listener to our form
 recipeApp.setUpEventListener = function () {
     // Add event listener to our form element 
     recipeApp.formElement.addEventListener('submit', function (e) {
@@ -84,13 +63,8 @@ recipeApp.setUpEventListener = function () {
     })
 }
 
-
 recipeApp.init();
 
-// recipeApp.displayRecipes = function (recipeData){
-//     let recipeArray = recipeData.recipeObjects;
 
-//     recipeArray.forEach(function (recipeObject) {
-        
-//     })
-// }
+
+
