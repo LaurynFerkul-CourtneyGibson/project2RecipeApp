@@ -10,7 +10,7 @@
 // NAMESPACING APP
 
 const recipeApp = {};
-recipeApp.apiKey = 'ad5247644ba34da28cffa606ab10aee';
+recipeApp.apiKey = 'ad5247644ba34da28cffa606ab10aeea';
 recipeApp.formElement = document.querySelector('form');
 recipeApp.recipeResultsUl = document.querySelector(`#recipeResults`);
 recipeApp.inputElement = document.querySelector(`input`);
