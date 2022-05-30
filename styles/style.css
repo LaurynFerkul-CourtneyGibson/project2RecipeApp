@@ -258,6 +258,17 @@ h1 .changeColor {
   color: #f7dc39;
 }
 
+h2 {
+  font-size: 1rem;
+  color: #8081be;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 0.7rem;
+  color: #8081be;
+}
+
 /******* BASE STYLES START (common styles seen throughout the website)*******/
 .wrapper {
   max-width: 1260px;
@@ -295,6 +306,14 @@ button {
 button:hover, button:focus {
   background-color: transparent;
   color: #f7dc39;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
 }
 
 /******* BASE STYLES END *******/
@@ -373,6 +392,53 @@ form input::placeholder {
   font-weight: 300;
   font-size: 1rem;
   color: #898989;
+}
+
+section {
+  margin: 50px 0;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+ul li {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  margin: 20px 0;
+  border-radius: 5%;
+  background-color: #e8eaf9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+}
+ul li:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+ul li img {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  border-radius: 5% 5% 0 0;
+}
+
+.recipeContent {
+  padding: 10px;
 }
 
 footer {

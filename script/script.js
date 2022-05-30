@@ -10,7 +10,7 @@
 // NAMESPACING APP
 
 const recipeApp = {};
-recipeApp.apiKey = '7e4cda4da2f846f992adab99aca1e7d0';
+recipeApp.apiKey = '910eb963666b4acf94646d6c331fecc0';
 recipeApp.formElement = document.querySelector('form');
 recipeApp.recipeResultsUl = document.querySelector(`#recipeResults`)
 
@@ -69,22 +69,25 @@ recipeApp.displayRecipes = function (recipeData) {
         image.src = recipeObject.image;
         image.alt = recipeObject.title;
 
+        const recipeContent = document.createElement('div');
+        recipeContent.classList.add('recipeContent'); 
+
         const title = document.createElement(`h2`);
         title.innerText = recipeObject.title;
 
         const cookTime = document.createElement(`p`);
         cookTime.innerText = `Cook time: ${recipeObject.readyInMinutes} mins`;
         
+        recipeContent.appendChild(title);
+        recipeContent.appendChild(cookTime);
+
         const recipeListItem = document.createElement('li');
 
         recipeListItem.appendChild(image);
-        recipeListItem.appendChild(title);
-        recipeListItem.appendChild(cookTime);
+        recipeListItem.appendChild(recipeContent);
 
         recipeApp.recipeResultsUl.appendChild(recipeListItem);
-
     })
 }
-
 
 recipeApp.init();

@@ -1,0 +1,29 @@
+section {
+    margin: 50px 0;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+        flex-basis: 30%;
+        margin: 20px 0;
+        border-radius: 5%;
+        background-color: $purpleGrey;
+        display: flex;
+        flex-direction: column;
+        transition: 0.7s ease;
+        &:hover{
+            filter: brightness(110%);
+        }
+        img {
+            flex-basis: 80%;
+            border-radius: 5% 5% 0 0;
+            }
+    }
+}
+
+.recipeContent{
+    padding: 10px;
+}
