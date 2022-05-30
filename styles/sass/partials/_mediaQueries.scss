@@ -64,6 +64,27 @@
     }
 
     /******* FORM STYLES END - MOBILE SCREENS *******/
+
+        section {
+            margin: 50px 0;
+        }
+    
+        ul {
+            flex-direction: column;
+            li {
+                flex-basis: 100%;
+                img{
+                    flex-basis: 50%;
+                    object-fit: cover;
+                }
+                h2{
+                    font-size: .8rem;
+                }
+                p{
+                    font-size: .6rem;
+                }
+            }
+        }
 }
 
 /****************** MEDIA QUERY FOR MOBILE END ******************/

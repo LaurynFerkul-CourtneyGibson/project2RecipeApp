@@ -27,8 +27,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -141,8 +140,7 @@ fieldset {
 }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -160,8 +158,7 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -204,13 +201,11 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -282,7 +277,6 @@ body {
 
 img {
   max-width: 100%;
-  min-width: 100%;
   display: block;
 }
 
@@ -300,7 +294,6 @@ button {
   color: #383838;
   display: block;
   width: 40%;
-  -webkit-transition: 1s ease;
   transition: 1s ease;
 }
 button:hover, button:focus {
@@ -320,43 +313,25 @@ ul li {
 header {
   background-color: #8081be;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
 }
 
 .headerInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 .headerInfo .headerImage {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  flex-basis: 30%;
+  align-self: flex-end;
 }
 
 form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 form input {
   width: 100%;
@@ -368,22 +343,12 @@ form input {
   font-weight: 300;
   font-size: 1rem;
 }
-form input::-webkit-input-placeholder {
-  font-weight: 300;
-  font-size: 1rem;
-  color: #898989;
-}
 form input::-moz-placeholder {
   font-weight: 300;
   font-size: 1rem;
   color: #898989;
 }
 form input:-ms-input-placeholder {
-  font-weight: 300;
-  font-size: 1rem;
-  color: #898989;
-}
-form input::-ms-input-placeholder {
   font-weight: 300;
   font-size: 1rem;
   color: #898989;
@@ -399,41 +364,22 @@ section {
 }
 
 ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 ul li {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  flex-basis: 30%;
   margin: 20px 0;
   border-radius: 5%;
   background-color: #e8eaf9;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transition: 0.7s ease;
+  flex-direction: column;
   transition: 0.7s ease;
 }
-ul li:hover {
-  -webkit-filter: brightness(110%);
-          filter: brightness(110%);
-}
 ul li img {
-  -ms-flex-preferred-size: 80%;
-      flex-basis: 80%;
+  flex-basis: 80%;
   border-radius: 5% 5% 0 0;
 }
 
@@ -461,8 +407,7 @@ footer {
 /****************** MEDIA QUERY FOR TABLET START ******************/
 @media (max-width: 900px) {
   .headerInfo .headerImage {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+    flex-basis: 40%;
   }
 }
 /****************** MEDIA QUERY FOR TABLET END ******************/
@@ -480,16 +425,12 @@ footer {
   }
 
   .headerInfo {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
   .headerInfo .headerImage {
     margin: 31px 0;
     max-width: 50%;
-    -ms-flex-item-align: center;
-        align-self: center;
+    align-self: center;
   }
 
   /******* HEADER STYLES END - MOBILE SCREENS *******/
@@ -498,16 +439,10 @@ footer {
     padding: 8px 16px;
     margin: 28px 0 22px 0;
   }
-  form input::-webkit-input-placeholder {
-    font-size: 0.8rem;
-  }
   form input::-moz-placeholder {
     font-size: 0.8rem;
   }
   form input:-ms-input-placeholder {
-    font-size: 0.8rem;
-  }
-  form input::-ms-input-placeholder {
     font-size: 0.8rem;
   }
   form input::placeholder {
@@ -521,5 +456,26 @@ footer {
   }
 
   /******* FORM STYLES END - MOBILE SCREENS *******/
+  section {
+    margin: 50px 0;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+  ul li {
+    flex-basis: 100%;
+  }
+  ul li img {
+    flex-basis: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  ul li h2 {
+    font-size: 0.8rem;
+  }
+  ul li p {
+    font-size: 0.6rem;
+  }
 }
-/****************** MEDIA QUERY FOR MOBILE END ******************/
+/****************** MEDIA QUERY FOR MOBILE END ******************//*# sourceMappingURL=style.css.map */
