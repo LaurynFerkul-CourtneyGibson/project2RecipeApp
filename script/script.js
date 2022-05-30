@@ -10,9 +10,11 @@
 // NAMESPACING APP
 
 const recipeApp = {};
-recipeApp.apiKey = 'ad5247644ba34da28cffa606ab10aeea';
+recipeApp.apiKey = 'ad5247644ba34da28cffa606ab10aee';
 recipeApp.formElement = document.querySelector('form');
-recipeApp.recipeResultsUl = document.querySelector(`#recipeResults`)
+recipeApp.recipeResultsUl = document.querySelector(`#recipeResults`);
+recipeApp.inputElement = document.querySelector(`input`);
+recipeApp.errorMessage = document.querySelector('.errorMessage');
 
 // init function ready to kick initalize the functions 
 recipeApp.init = function () {
@@ -37,11 +39,21 @@ recipeApp.getRecipeInfo = function (ingredient) {
         .then(function (response) {
             if (response.ok) {
                 return response.json();
+
             }
         })
         .then(function (results) {
-            recipeApp.recipeResultsUl.innerHTML = '';
-            recipeApp.displayRecipes(results);
+            if (results.results.length === 0){
+                recipeApp.errorMessage.innerText = `Sorry we don't have any recipes for you!`;
+    
+            }
+            else {
+                recipeApp.recipeResultsUl.innerHTML = '';
+                recipeApp.displayRecipes(results);
+            }
+
+        }) .catch (function(err) {
+            recipeApp.errorMessage.innerText = `Sorry something went wrong on our end!`;
         })
 }
 
@@ -53,8 +65,13 @@ recipeApp.setUpEventListener = function () {
         // Grab the value of the select element
         const inputElement = document.getElementById('ingredientItem').value;
 
-        recipeApp.getRecipeInfo(inputElement);
+        if (inputElement === "" || !isNaN(inputElement)){
+            recipeApp.errorMessage.innerText = `Can't seem to find anything. Try again!`;
 
+        } else{
+            recipeApp.errorMessage.innerText = "";
+            recipeApp.getRecipeInfo(inputElement);
+        }
     })
 }
 
