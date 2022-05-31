@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,13 +16,20 @@
             <!-- START OF HEADER CONTENT -->
             <div class="headerInfo">
                 <div class="headerText">
-                    <h1><span class="oneLine">I don't</span> <span class="oneLine">know</span> <span class="oneLine">what</span>
-                        <span class="oneLine">to <span class="changeColor">eat</span></span></h1>
+                    <h1><span class="oneLine">I don't</span> <span class="oneLine">know</span> <span
+                            class="oneLine">what</span>
+                        <span class="oneLine">to <span class="changeColor">eat</span></span>
+                    </h1>
                 </div>
-                <div class="headerImage"><img src="./assets/tray.png" alt="silver tray"></div>
+                <div class="headerImage">
+                    <p></p>
+                    <img class="bottomOfTray" src="./assets/bottomOfTray.png" alt="Bottom of tray">
+                    <img class="topOfTray" src="./assets/topOfTray.png" alt="Top of tray">
+                    <img class="hamburger" src="./assets/hamburger.png" alt="Hamburger">
+                </div>
             </div>
             <!-- END OF HEADER CONTENT -->
-            
+
             <!-- START OF FORM TO ENTER AN INGREDIENT -->
             <form>
                 <label for="ingredientItem" class="sr-only">an ingredient you're craving</label>
@@ -30,20 +38,21 @@
                 <button>find a recipe</button>
             </form>
             <!-- END OF FORM TO ENTER AN INGREDIENT -->
-            </header>
-        </div>
+    </header>
+    </div>
     <!-- END OF HEADER CONTENT -->
 
     <!-- START OF MAIN CONTENT -->
     <main>
-        <div class="wrapper">
-            <!-- START OF RESULT CONTENT -->
-            <section>
-                <ul id="recipeResults">
+        <!-- START OF RESULT CONTENT -->
+        <section>
+            <div class="wrapper">
+                <ul id="recipeResults" class="recipeResults">
                 </ul>
-            </section>
-            <!-- END OF RESULT CONTENT -->
-        </div>
+            </div>
+        </section>
+        <!-- END OF RESULT CONTENT -->
+
     </main>
     <!-- END OF MAIN CONTENT -->
 
@@ -54,8 +63,10 @@
         </div>
     </footer>
     <!-- END OF FOOTER CONTENT -->
-    
+
     <!-- IMPORTED JAVASCRIPT -->
+    <script src="https://kit.fontawesome.com/6fa3c297e4.js" crossorigin="anonymous"></script>
     <script src="./script/script.js"></script>
 </body>
+
 </html>

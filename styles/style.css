@@ -238,6 +238,7 @@ body {
 
 h1,
 h2,
+h3,
 p {
   padding: 0;
   margin: 0;
@@ -262,6 +263,13 @@ h2 {
   font-size: 1rem;
   color: #8081be;
   text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.9rem;
+  color: #8081be;
+  text-transform: uppercase;
+  border-bottom: solid 1px;
 }
 
 p {
@@ -344,6 +352,29 @@ header {
       flex-basis: 30%;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  position: relative;
+}
+.headerInfo .headerImage .bottomOfTray {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+.headerInfo .headerImage .topOfTray {
+  position: absolute;
+  bottom: 16px;
+  z-index: 1;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+.headerInfo .headerImage .topOfTray:hover {
+  bottom: 105px;
+}
+.headerInfo .headerImage .hamburger {
+  position: absolute;
+  width: 30%;
+  position: absolute;
+  bottom: 20px;
+  right: 36%;
 }
 
 form {
@@ -361,7 +392,7 @@ form {
 form input {
   width: 100%;
   padding: 18px 30px;
-  margin: 50px 0 30px 0;
+  margin: 50px 0 0;
   border-radius: 30px;
   border: none;
   color: #383838;
@@ -393,12 +424,24 @@ form input::placeholder {
   font-size: 1rem;
   color: #898989;
 }
-
-section {
-  margin: 50px 0;
+form button {
+  margin-top: 15px;
 }
 
-ul {
+.errorMessage {
+  color: white;
+  margin: 10px 0;
+  padding: 0 0 0 30px;
+  min-width: 100%;
+  font-size: 0.8rem;
+}
+
+main {
+  position: relative;
+  padding: 50px 0;
+}
+
+.recipeResults {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,11 +454,11 @@ ul {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-ul li {
+.recipeResults li {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
   margin: 20px 0;
-  border-radius: 5%;
+  border-radius: 10px;
   background-color: #e8eaf9;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -424,17 +467,104 @@ ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  cursor: pointer;
   -webkit-transition: 0.7s ease;
   transition: 0.7s ease;
 }
-ul li img {
+.recipeResults li:hover, .recipeResults li:focus {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  scale: 1.05;
+}
+.recipeResults li img {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
-  border-radius: 5% 5% 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .recipeContent {
   padding: 10px;
+}
+
+.modalBackdrop {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+.modalBackdropHidden {
+  display: none;
+}
+
+.modalContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e8eaf9;
+  padding: 20px;
+  border-radius: 20px;
+  width: 80%;
+  z-index: 2;
+}
+.modalContainer .modalText {
+  -ms-flex-preferred-size: calc(60% - 20px);
+      flex-basis: calc(60% - 20px);
+  margin: 0 20px;
+}
+.modalContainer .modalText h2 {
+  font-size: 1.5rem;
+}
+.modalContainer .modalText p {
+  color: #383838;
+  line-height: 1rem;
+  margin: 10px 0;
+}
+.modalContainer .modalText p a {
+  color: #383838;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.modalContainer .modalText p a:hover, .modalContainer .modalText p a:focus {
+  color: #8081be;
+}
+.modalContainer .modalText ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+}
+.modalContainer .modalText ul li {
+  margin: 0;
+  color: #383838;
+  list-style: disc;
+  line-height: 1rem;
+  margin: 0 0 0 15px;
+  font-size: 0.7rem;
+}
+.modalContainer img {
+  min-width: 40%;
+  max-width: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modalContainer .exitButton {
+  display: contents;
+  color: #8081be;
+}
+.modalContainer .exitButton:hover, .modalContainer .exitButton:focus {
+  color: #f7dc39;
 }
 
 footer {
@@ -483,7 +613,7 @@ footer {
   }
   .headerInfo .headerImage {
     margin: 31px 0;
-    max-width: 50%;
+    min-width: 50%;
     -ms-flex-item-align: center;
         align-self: center;
   }
@@ -521,27 +651,51 @@ footer {
     margin: 50px 0;
   }
 
-  ul {
+  .recipeResults {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  ul li {
+  .recipeResults li {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-  ul li img {
+  .recipeResults li img {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  ul li h2 {
+  .recipeResults li h2 {
     font-size: 0.8rem;
   }
-  ul li p {
+  .recipeResults li p {
     font-size: 0.6rem;
+  }
+
+  .modalContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modalContainer .modalText {
+    margin: 0;
+  }
+  .modalContainer img {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .modalContainer .exitButton {
+    border-top: solid 1px #8081be;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  .modalContainer .exitButton i {
+    border-top: solid 1px #8081be;
+    padding-top: 10px;
+    margin-top: 10px;
   }
 }
 /****************** MEDIA QUERY FOR MOBILE END ******************/

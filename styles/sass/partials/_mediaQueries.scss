@@ -38,7 +38,7 @@
 
         .headerImage {
             margin: 31px 0;
-            max-width: 50%;
+            min-width: 50%;
             align-self: center;
         }
     }
@@ -65,26 +65,55 @@
 
     /******* FORM STYLES END - MOBILE SCREENS *******/
 
-        section {
-            margin: 50px 0;
-        }
-    
-        ul {
-            flex-direction: column;
-            li {
-                flex-basis: 100%;
-                img{
-                    flex-basis: 50%;
-                    object-fit: cover;
-                }
-                h2{
-                    font-size: .8rem;
-                }
-                p{
-                    font-size: .6rem;
-                }
+    section {
+        margin: 50px 0;
+    }
+
+    .recipeResults {
+        flex-direction: column;
+
+        li {
+            flex-basis: 100%;
+
+            img {
+                flex-basis: 50%;
+                object-fit: cover;
+            }
+
+            h2 {
+                font-size: .8rem;
+            }
+
+            p {
+                font-size: .6rem;
             }
         }
+    }
+
+    .modalContainer {
+        flex-direction: column;
+
+        .modalText {
+            margin: 0;
+        }
+
+        img {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .exitButton {
+            border-top: solid 1px $darkPurple;
+            padding-top: 10px;
+            margin-top: 10px;
+            i {
+                    border-top: solid 1px $darkPurple;
+                    padding-top: 10px;
+                    margin-top: 10px;
+                }
+        }
+    }
+
 }
 
 /****************** MEDIA QUERY FOR MOBILE END ******************/

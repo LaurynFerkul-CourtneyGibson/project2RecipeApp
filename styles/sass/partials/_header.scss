@@ -7,11 +7,38 @@ header {
     padding: 50px 0;
 }
 
-.headerInfo{
+.headerInfo {
     display: flex;
     justify-content: center;
-    .headerImage{
+
+    .headerImage {
         flex-basis: 30%;
         align-self: flex-end;
+        position: relative;
+
+        .bottomOfTray {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .topOfTray {
+            position: absolute;
+            bottom: 16px;
+            z-index: 1;
+            transition: 1s ease;
+
+            &:hover {
+                bottom: 105px;
+            }
+        }
+
+        .hamburger {
+            position: absolute;
+            width: 30%;
+            position: absolute;
+            bottom: 20px;
+            right: 36%;
+        }
     }
 }
