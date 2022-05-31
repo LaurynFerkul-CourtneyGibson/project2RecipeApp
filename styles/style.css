@@ -590,13 +590,24 @@ footer {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
   }
+
+  form input {
+    padding: 10px 16px;
+    margin-top: 28px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
 }
 /****************** MEDIA QUERY FOR TABLET END ******************/
 /****************** MEDIA QUERY FOR MOBILE START ******************/
-@media (max-width: 660px) {
+@media (max-width: 600px) {
   h1 {
-    font-size: 15vw;
-    line-height: 15vw;
+    font-size: 12vw;
+    line-height: 12vw;
     text-align: center;
   }
 
@@ -613,16 +624,25 @@ footer {
   }
   .headerInfo .headerImage {
     margin: 31px 0;
-    min-width: 50%;
+    min-width: 40%;
     -ms-flex-item-align: center;
         align-self: center;
+  }
+  .headerInfo .headerImage .topOfTray {
+    bottom: 12px;
+  }
+  .headerInfo .headerImage .topOfTray:hover {
+    bottom: 65px;
+  }
+  .headerInfo .headerImage .hamburger {
+    bottom: 12px;
   }
 
   /******* HEADER STYLES END - MOBILE SCREENS *******/
   /******* FORM STYLES START - MOBILE SCREENS *******/
   form input {
     padding: 8px 16px;
-    margin: 28px 0 22px 0;
+    margin-top: 28px;
   }
   form input::-webkit-input-placeholder {
     font-size: 0.8rem;
@@ -638,12 +658,6 @@ footer {
   }
   form input::placeholder {
     font-size: 0.8rem;
-  }
-
-  button {
-    width: 100%;
-    font-size: 1rem;
-    padding: 10px;
   }
 
   /******* FORM STYLES END - MOBILE SCREENS *******/

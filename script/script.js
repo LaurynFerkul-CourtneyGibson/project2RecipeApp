@@ -84,7 +84,6 @@ recipeApp.displayRecipes = function (recipeData) {
     let recipeArray = recipeData.results;
 
     recipeArray.forEach(function (recipeObject) {
-        console.log(recipeObject);
 
         const image = document.createElement('img');
         image.src = recipeObject.image;
