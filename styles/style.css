@@ -324,6 +324,7 @@ ul li {
 }
 
 /******* BASE STYLES END *******/
+/******* HEADER STYLES START *******/
 header {
   background-color: #8081be;
   min-height: 100vh;
@@ -377,6 +378,8 @@ header {
   right: 36%;
 }
 
+/******* HEADER STYLES END *******/
+/******* FORM STYLES START *******/
 form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -428,6 +431,7 @@ form button {
   margin-top: 15px;
 }
 
+/******* ERROR MESSAGE STYLES START *******/
 .errorMessage {
   color: white;
   margin: 10px 0;
@@ -436,11 +440,15 @@ form button {
   font-size: 0.8rem;
 }
 
+/******* ERROR MESSAGE STYLES END *******/
+/******* FORM STYLES END *******/
+/******* RESULT SECTION STYLES START *******/
 main {
   position: relative;
   padding: 50px 0;
 }
 
+/******* RECIPE CARD STYLES START *******/
 .recipeResults {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -486,6 +494,8 @@ main {
   padding: 10px;
 }
 
+/******* RECIPE CARD STYLES END *******/
+/******* POP UP STYLES START *******/
 .modalBackdrop {
   position: absolute;
   top: 0;
@@ -567,6 +577,9 @@ main {
   color: #f7dc39;
 }
 
+/******* POP UP STYLES END *******/
+/******* RESULT SECTION STYLES END *******/
+/******* FOOTER STYLES START *******/
 footer {
   background-color: #b4b4da;
   text-align: center;
@@ -576,21 +589,28 @@ footer {
   font-weight: 300;
 }
 
+/******* FOOTER STYLES END *******/
 /****************** MEDIA QUERY FOR LARGE SCREENS START ******************/
 @media (min-width: 2800px) {
+  /******* TYPOGRAPHY STYLES START - LARGE SCREENS *******/
   h1 {
     font-size: 4vw;
     line-height: 4vw;
   }
+
+  /******* TYPOGRAPHY STYLES END - LARGE SCREENS *******/
 }
 /****************** MEDIA QUERY FOR LARGE SCREENS END ******************/
 /****************** MEDIA QUERY FOR TABLET START ******************/
 @media (max-width: 900px) {
+  /******* HEADER STYLES START - TABLET SCREENS *******/
   .headerInfo .headerImage {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
   }
 
+  /******* HEADER STYLES END- TABLET SCREENS *******/
+  /******* FORM STYLES START - TABLET SCREENS *******/
   form input {
     padding: 10px 16px;
     margin-top: 28px;
@@ -601,6 +621,8 @@ footer {
     font-size: 1rem;
     padding: 10px;
   }
+
+  /******* FORM STYLES END - TABLET SCREENS *******/
 }
 /****************** MEDIA QUERY FOR TABLET END ******************/
 /****************** MEDIA QUERY FOR MOBILE START ******************/
@@ -661,10 +683,12 @@ footer {
   }
 
   /******* FORM STYLES END - MOBILE SCREENS *******/
+  /******* RESULTS SECTION STYLES START - MOBILE SCREENS *******/
   section {
     margin: 50px 0;
   }
 
+  /******* RECIPE CARD STYLES START - MOBILE SCREENS *******/
   .recipeResults {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -688,6 +712,8 @@ footer {
     font-size: 0.6rem;
   }
 
+  /******* RECIPE CARD STYLES END - MOBILE SCREENS *******/
+  /******* POP UP STYLES START - MOBILE SCREENS *******/
   .modalContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -711,5 +737,8 @@ footer {
     padding-top: 10px;
     margin-top: 10px;
   }
+
+  /******* POP UP STYLES END - MOBILE SCREENS *******/
+  /******* RESULTS SECTION STYLES END - MOBILE SCREENS *******/
 }
 /****************** MEDIA QUERY FOR MOBILE END ******************/

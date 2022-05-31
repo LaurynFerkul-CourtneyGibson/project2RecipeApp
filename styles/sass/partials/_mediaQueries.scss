@@ -1,35 +1,38 @@
 /****************** MEDIA QUERY FOR LARGE SCREENS START ******************/
 @media (min-width: 2800px) {
+    /******* TYPOGRAPHY STYLES START - LARGE SCREENS *******/
     h1 {
         font-size: 4vw;
         line-height: 4vw;
     }
+    /******* TYPOGRAPHY STYLES END - LARGE SCREENS *******/
 }
-
 /****************** MEDIA QUERY FOR LARGE SCREENS END ******************/
 
 /****************** MEDIA QUERY FOR TABLET START ******************/
 @media (max-width: 900px) {
+    /******* HEADER STYLES START - TABLET SCREENS *******/
     .headerInfo {
         .headerImage {
             flex-basis: 40%;
         }
     }
-
+    /******* HEADER STYLES END- TABLET SCREENS *******/
+    
+    /******* FORM STYLES START - TABLET SCREENS *******/
     form {
         input {
             padding: 10px 16px;
             margin-top: 28px;
         }
     }
-    
     button {
         width: 100%;
         font-size: 1rem;
         padding: 10px;
     }
+    /******* FORM STYLES END - TABLET SCREENS *******/
 }
-
 /****************** MEDIA QUERY FOR TABLET END ******************/
 
 /****************** MEDIA QUERY FOR MOBILE START ******************/
@@ -39,15 +42,12 @@
         line-height: 12vw;
         text-align: center;
     }
-
     /******* HEADER STYLES START - MOBILE SCREENS *******/
     header {
         padding-bottom: 50px;
     }
-
     .headerInfo {
         flex-direction: column-reverse;
-
         .headerImage {
             margin: 31px 0;
             min-width: 40%;
@@ -63,7 +63,6 @@
             }
         }
     }
-
     /******* HEADER STYLES END - MOBILE SCREENS *******/
 
     /******* FORM STYLES START - MOBILE SCREENS *******/
@@ -71,64 +70,59 @@
         input {
             padding: 8px 16px;
             margin-top: 28px;
-
             &::placeholder {
                 font-size: 0.8rem;
             }
         }
     }
-
     /******* FORM STYLES END - MOBILE SCREENS *******/
 
+    /******* RESULTS SECTION STYLES START - MOBILE SCREENS *******/
     section {
         margin: 50px 0;
     }
-
+    /******* RECIPE CARD STYLES START - MOBILE SCREENS *******/
     .recipeResults {
         flex-direction: column;
-
         li {
             flex-basis: 100%;
-
             img {
                 flex-basis: 50%;
                 object-fit: cover;
             }
-
             h2 {
                 font-size: .8rem;
             }
-
             p {
                 font-size: .6rem;
             }
         }
     }
+    /******* RECIPE CARD STYLES END - MOBILE SCREENS *******/
 
+    /******* POP UP STYLES START - MOBILE SCREENS *******/
     .modalContainer {
         flex-direction: column;
-
         .modalText {
             margin: 0;
         }
-
         img {
             min-width: 100%;
             max-width: 100%;
         }
-
         .exitButton {
             border-top: solid 1px $darkPurple;
             padding-top: 10px;
             margin-top: 10px;
             i {
-                    border-top: solid 1px $darkPurple;
-                    padding-top: 10px;
-                    margin-top: 10px;
-                }
+                border-top: solid 1px $darkPurple;
+                padding-top: 10px;
+                margin-top: 10px;
+            }
         }
     }
-
+    /******* POP UP STYLES END - MOBILE SCREENS *******/
+    /******* RESULTS SECTION STYLES END - MOBILE SCREENS *******/
 }
 
 /****************** MEDIA QUERY FOR MOBILE END ******************/

@@ -1,8 +1,8 @@
+/******* FORM STYLES START *******/
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     input {
         width: 100%;
         padding: 18px 30px;
@@ -12,7 +12,6 @@ form {
         color: $darkGrey;
         font-weight: 300;
         font-size: 1rem;
-
         &::placeholder {
             font-weight: 300;
             font-size: 1rem;
@@ -20,12 +19,12 @@ form {
         }
 
     }
-
     button {
         margin-top: 15px;
     }
 }
 
+/******* ERROR MESSAGE STYLES START *******/
 .errorMessage {
     color: white;
     margin: 10px 0;
@@ -33,3 +32,5 @@ form {
     min-width: 100%;
     font-size: 0.8rem;
 }
+/******* ERROR MESSAGE STYLES END *******/
+/******* FORM STYLES END *******/

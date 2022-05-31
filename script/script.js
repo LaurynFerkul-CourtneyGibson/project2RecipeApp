@@ -1,16 +1,10 @@
-// RECIPE APP                                                      //Create a namespace
-// create a init method to call the methods applied in the app and call it at the end of the document
-// Landing page with form input to gather user input regarding ingredients they want to be included in the recipe suggested
-// A button that submits the user's ingredient choice
-// Query the DOM for the form with a click event attached to it
-// Once the form is submitted store the user input in a variable
-// After the form is submitted make an AJAX request to retrieve data from spoonacular, in particular, the recipe title and image
-// Display the recipe results on the page by looping through each array and adding the HTML elements to the page, including the title and image
-
-// NAMESPACING APP
-
+// Created namespacing
 const recipeApp = {};
+
+// Properties stored in namespace
 recipeApp.apiKey = 'ad5247644ba34da28cffa606ab10aeea';
+
+// Queried DOM for elements in HTML
 recipeApp.formElement = document.querySelector('form');
 recipeApp.recipeResultsUl = document.querySelector(`#recipeResults`);
 recipeApp.inputElement = document.querySelector('input');
@@ -18,7 +12,7 @@ recipeApp.errorMessage = document.querySelector('.errorMessage');
 recipeApp.resultSection = document.querySelector('section');
 
 
-// init function ready to kick initalize the functions 
+// Kicks off all the functions 
 recipeApp.init = function () {
     recipeApp.setUpEventListener();
 };
@@ -26,8 +20,10 @@ recipeApp.init = function () {
 // Getting the recipe information from Spoonacular API
 recipeApp.getRecipeInfo = function (ingredient) {
 
-    // Building our endpoint for to the recipe id
+    // Building our endpoint to access recipe information
     const idUrl = new URL(`https://api.spoonacular.com/recipes/complexSearch`);
+
+    // Added parameters to get access to certain recipe information
     idUrl.search = new URLSearchParams({
         apiKey: recipeApp.apiKey,
         includeIngredients: ingredient,
@@ -39,28 +35,28 @@ recipeApp.getRecipeInfo = function (ingredient) {
     // Making our API call to get the recipe id
     fetch(idUrl)
         .then(function (response) {
+            // If no errors carry on but if not throw functions 
             if (response.ok) {
                 return response.json();
             } else {
                 throw new Error(res.statusText);
             }
         })
-        .then(function (results) {
-            // Check if any recipes are supplied
-            if (results.results.length === 0) {
+        .then(function (res) {
+            // Check if any recipes are supplied and if not throw a error message
+            if (res.results.length === 0) {
                 recipeApp.errorMessage.innerText = `Sorry we don't have any recipes for you!`;
-
-            }
-            else {
+            } else {
                 recipeApp.recipeResultsUl.innerHTML = '';
-                recipeApp.displayRecipes(results);
+                recipeApp.displayRecipes(res);
             }
         }).catch(function (err) {
+            // catches any errors the api may encounter
             recipeApp.errorMessage.innerText = `Sorry something went wrong on our end!`;
         })
 }
 
-// Connecting our event listener to our form
+// Method that listens for form input
 recipeApp.setUpEventListener = function () {
     // Add event listener to our form element 
     recipeApp.formElement.addEventListener('submit', function (e) {
@@ -68,9 +64,9 @@ recipeApp.setUpEventListener = function () {
 
         const inputElement = document.getElementById('ingredientItem').value;
 
+        // Checks if the input is valid before executing the fetch request
         if (inputElement === "" || !isNaN(inputElement)) {
             recipeApp.errorMessage.innerText = `Can't seem to find anything. Try again!`;
-
         } else {
             recipeApp.errorMessage.innerText = "";
             recipeApp.getRecipeInfo(inputElement);
@@ -78,13 +74,15 @@ recipeApp.setUpEventListener = function () {
     })
 }
 
-
+// Method that uses the user input and API key to display certain information to the page
 recipeApp.displayRecipes = function (recipeData) {
 
     let recipeArray = recipeData.results;
 
+    // Loops through the array of recipes 
     recipeArray.forEach(function (recipeObject) {
 
+        // Create and call each element wanted displayed to the page and appended it to the appropriate elements
         const image = document.createElement('img');
         image.src = recipeObject.image;
         image.alt = recipeObject.title;
@@ -98,10 +96,8 @@ recipeApp.displayRecipes = function (recipeData) {
         const cookTime = document.createElement(`p`);
         cookTime.innerText = `Cook time: ${recipeObject.readyInMinutes} mins`;
 
-
         recipeContent.appendChild(title);
         recipeContent.appendChild(cookTime);
-
 
         const recipeListItem = document.createElement('li');
 
@@ -110,13 +106,15 @@ recipeApp.displayRecipes = function (recipeData) {
 
         recipeApp.recipeResultsUl.appendChild(recipeListItem);
 
-        // ********************************* MODAL **************************************
+        // Calls the displayModal method to display pop up of each recipe
         recipeApp.displayModal(recipeListItem, recipeObject);
     })
-
 }
 
+// Displays pop up with more recipe information 
 recipeApp.displayModal = function (clickItem, recipe) {
+
+    // function that removes the modal from the screen
     closeModal = function () {
         if (modalBackdrop) {
             modalBackdrop.remove();
@@ -125,7 +123,10 @@ recipeApp.displayModal = function (clickItem, recipe) {
         }
     }
 
+    // Waits for a click on the recipe item and displays more information
     clickItem.addEventListener('click', function () {
+
+        // Create and call each element wanted displayed to the page and appended it to the appropriate elements
         modalBackdrop = document.createElement('div');
         modalBackdrop.classList.add('modalBackdrop')
 
@@ -189,5 +190,5 @@ recipeApp.displayModal = function (clickItem, recipe) {
     })
 };
 
-
+// Calls the init method 
 recipeApp.init();
