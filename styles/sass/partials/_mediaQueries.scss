@@ -81,6 +81,13 @@
     section {
         margin: 50px 0;
     }
+    /******* ERROR MESSAGE STYLES START - MOBILE SCREENS *******/
+    .errorMessage {
+        padding:0;
+        margin: 15px 0 0;
+        text-align: center;
+    }
+    /******* ERROR MESSAGE STYLES END - MOBILE SCREENS *******/
     /******* RECIPE CARD STYLES START - MOBILE SCREENS *******/
     .recipeResults {
         flex-direction: column;
